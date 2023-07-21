@@ -1,0 +1,45 @@
+package pl.xavras.infrastructure.database.entity;
+
+import jakarta.persistence.*;
+import lombok.*;
+
+import java.util.Set;
+
+@Data
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
+@Entity
+@Table(name = "restaurant")
+public class RestaurantEntity {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "restaurant_id")
+    private Integer restaurantId;
+
+    @Column(name = "name")
+    private String name;
+
+    @Column(name = "phone")
+    private String phone;
+
+    @Column(name = "email")
+    private String email;
+
+    @OneToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    @JoinColumn(name = "address_id")
+    private AddressEntity address;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "owner_id")
+    private OwnerEntity owner;
+
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "restaurant")
+    private Set<MenuItemEntity> menuItems;
+
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "restaurant")
+    private Set<RestaurantStreetCoverageEntity> streetCoverage;
+
+
+}
