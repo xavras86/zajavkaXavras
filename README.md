@@ -31,3 +31,4 @@ Aplikacja do zamawiania jedzenie z dowozem, funkcje:
 - Właściciel lokalu zaznacza, że zamówienie zostało zrealizowane. Tutaj to jest znaczne uproszczenie, bo w praktyce robiłby to dostawca jedzenia, przez aplikację mobilną, ale upraszczamy sobie rzeczywistość, dlatego u nas taką możliwość będzie miał właściciel lokalu gastronomicznego.
 
 
+![schemat_bazy drawio_v2](https://github.com/xavras86/zajavkaXavras/assets/99759304/0fca8d9a-7a03-4000-a4e7-fa6cac45da82)
