@@ -5,18 +5,16 @@ import lombok.Data;
 import lombok.Value;
 import lombok.With;
 
-import java.util.Set;
-
 @With
 @Value
 @Builder
 @Data
-public class Restaurant {
+public class Customer {
 
     String name;
+    String surname;
+    String login;
     String phone;
     String email;
-    Set<RestaurantStreet> streetSet;
-
 
 }

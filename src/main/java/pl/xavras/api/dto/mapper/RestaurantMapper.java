@@ -7,5 +7,5 @@ import pl.xavras.domain.Restaurant;
 @Mapper(componentModel = "spring")
 public interface RestaurantMapper {
 
-    RestaurantDTO map(Restaurant restaurant);
+    RestaurantDTO mapFromEntity(Restaurant restaurant);
 }

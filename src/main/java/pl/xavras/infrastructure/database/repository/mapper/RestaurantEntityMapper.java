@@ -10,7 +10,7 @@ public interface RestaurantEntityMapper {
 
     //    @Mapping(target = "address", ignore = true)
 //    @Mapping(target = "owner", ignore = true)
-//    @Mapping(target = "streetCoverage", ignore = true)
+//    @Mapping(target = "street", ignore = true)
 //    @Mapping(target = "menuItems", ignore = true )
     Restaurant mapFromEntity(RestaurantEntity entity);
 }

@@ -8,3 +8,4 @@ create TABLE customer
     PRIMARY KEY (customer_id),
     UNIQUE (email)
 );
+

@@ -5,25 +5,29 @@ import lombok.*;
 
 import java.util.Set;
 
-@Data
+@Getter
+@Setter
+@EqualsAndHashCode(of = "streetId")
+@ToString(of ={"streetId", "city", "street"})
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@Table(name = "streetCoverage")
-public class StreetCoverageEntity {
+@Table(name = "street")
+public class StreetEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "streetCoverage_id")
-    private Integer StreetCoverageId;
+    @Column(name = "street_id")
+    private Integer streetId;
 
     @Column(name = "city")
     private String city;
 
+
     @Column(name = "street")
     private String street;
 
-    @OneToMany(fetch = FetchType.LAZY, mappedBy = "streetCoverage")
-    private Set<RestaurantStreetCoverageEntity> resturantStreetCoverage;
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "street")
+    private Set<RestaurantStreetEntity> resturantStreet;
 }

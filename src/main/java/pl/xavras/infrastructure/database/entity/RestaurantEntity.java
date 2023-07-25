@@ -5,8 +5,10 @@ import lombok.*;
 
 import java.util.Set;
 
-@Data
-@Builder
+@Getter
+@Setter
+@EqualsAndHashCode(of = "restaurantId")
+@ToString(of = {"restaurantId", "name", "phone", "email"})
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
@@ -27,7 +29,7 @@ public class RestaurantEntity {
     @Column(name = "email")
     private String email;
 
-    @OneToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     @JoinColumn(name = "address_id")
     private AddressEntity address;
 
@@ -39,7 +41,7 @@ public class RestaurantEntity {
     private Set<MenuItemEntity> menuItems;
 
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "restaurant")
-    private Set<RestaurantStreetCoverageEntity> streetCoverage;
+    private Set<RestaurantStreetEntity> streets;
 
 
 }

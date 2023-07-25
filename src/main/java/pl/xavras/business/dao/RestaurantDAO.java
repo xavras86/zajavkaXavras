@@ -10,4 +10,6 @@ public interface RestaurantDAO {
     Optional<Restaurant> findByName(String name);
 
     List<Restaurant> findAll();
+
+//    Set<Restaurant> findRestaurantsByStreetName(String streetName);
 }
