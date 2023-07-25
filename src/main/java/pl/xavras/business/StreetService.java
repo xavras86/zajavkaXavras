@@ -8,6 +8,7 @@ import pl.xavras.business.dao.StreetDAO;
 import pl.xavras.domain.Street;
 
 import java.util.List;
+import java.util.Set;
 
 @Service
 @AllArgsConstructor
@@ -16,14 +17,17 @@ public class StreetService {
 
     private final StreetDAO streetDAO;
 
+
     @Transactional
     public List<Street> findAll() {
-
-
-        List<Street> all = streetDAO.findAll();
-//        log.info("streets from SERVICE: " + all);
-        log.info("restaurants to streets"+ all.get(0).getRestaurantStreets());
-        return all;
-
+        return streetDAO.findAll();
     }
+
+    //cykliczna zależność
+//    @Transactional
+//    public Set<Street> findStreetsByRestaurantName(String name){
+//
+//        return streetDAO.findStreetsByRestaurantName(name);
+//    }
+
 }

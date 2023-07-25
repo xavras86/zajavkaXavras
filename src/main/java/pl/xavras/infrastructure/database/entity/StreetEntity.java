@@ -2,6 +2,8 @@ package pl.xavras.infrastructure.database.entity;
 
 import jakarta.persistence.*;
 import lombok.*;
+import org.hibernate.annotations.Fetch;
+import org.hibernate.annotations.FetchMode;
 
 import java.util.Set;
 
@@ -24,10 +26,10 @@ public class StreetEntity {
     @Column(name = "city")
     private String city;
 
-
     @Column(name = "street")
     private String street;
 
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "street")
-    private Set<RestaurantStreetEntity> resturantStreet;
+    @Fetch(value = FetchMode.JOIN)
+    private Set<RestaurantStreetEntity> restaurantStreets;
 }

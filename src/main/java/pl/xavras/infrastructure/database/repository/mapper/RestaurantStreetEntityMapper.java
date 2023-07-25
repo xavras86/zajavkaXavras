@@ -7,8 +7,12 @@ import pl.xavras.domain.Street;
 import pl.xavras.infrastructure.database.entity.RestaurantStreetEntity;
 import pl.xavras.infrastructure.database.entity.StreetEntity;
 
+import java.util.Set;
+
 @Mapper(componentModel = "spring", unmappedTargetPolicy = ReportingPolicy.IGNORE)
 public interface RestaurantStreetEntityMapper {
 
     RestaurantStreet mapFromEntity(RestaurantStreetEntity entity);
+
+    Set<RestaurantStreet> mapFromEntity(Set<RestaurantStreetEntity> entity);
 }

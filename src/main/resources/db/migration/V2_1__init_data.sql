@@ -61,7 +61,7 @@ insert into CUSTOMER (customer_id, name, surname, phone, email) values (49, 'Tim
 insert into CUSTOMER (customer_id, name, surname, phone, email) values (50, 'Marleah', 'Sills', '353 423 8328', 'msills1d@weibo.com');
 
 insert into street (street_id, city, street) values (1, 'Poznań', 'al. 15 Pułku Ułanów Poznańskich');
-insert into street (street_id, city, street) values (2,'Poznań', 'ul. 23 Lutego');
+insert into street (street_id, city, street) values (2,'Poznań', 'Polna');
 insert into street (street_id, city, street) values (3,'Poznań', 'ul. 27 Grudnia');
 insert into street (street_id, city, street) values (4,'Poznań', 'ul. 28 Czerwca 1956 r.');
 insert into street (street_id, city, street) values (5,'Poznań', 'ul. 3 Maja');

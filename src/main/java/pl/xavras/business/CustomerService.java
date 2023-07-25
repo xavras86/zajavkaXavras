@@ -26,9 +26,9 @@ public class CustomerService {
     @Transactional
     public Optional<Customer> findByLogin(String login) {
         Optional<Customer> byLogin = customerDAO.findByLogin(login);
-//        if (byLogin.isEmpty()) {
-//            throw new RuntimeException("Customer with login [%s] doest noc exists".formatted(login));
-//        }
+        if (byLogin.isEmpty()) {
+            throw new RuntimeException("Customer with login [%s] doest noc exists".formatted(login));
+        }
         return byLogin;
     }
 }

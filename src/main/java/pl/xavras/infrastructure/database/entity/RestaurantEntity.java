@@ -41,7 +41,7 @@ public class RestaurantEntity {
     private Set<MenuItemEntity> menuItems;
 
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "restaurant")
-    private Set<RestaurantStreetEntity> streets;
+    private Set<RestaurantStreetEntity> restaurantStreets;
 
 
 }

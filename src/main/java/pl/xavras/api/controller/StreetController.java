@@ -5,13 +5,11 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import pl.xavras.api.dto.RestaurantStreetDTO;
-import pl.xavras.api.dto.StreetDTO;
+import org.springframework.web.bind.annotation.PathVariable;
 import pl.xavras.api.dto.mapper.StreetMapper;
 import pl.xavras.business.StreetService;
-import pl.xavras.domain.Restaurant;
 
-import java.util.stream.Stream;
+import java.util.stream.Collectors;
 
 @Controller
 @AllArgsConstructor
@@ -19,12 +17,8 @@ import java.util.stream.Stream;
 public class StreetController {
 
     public static final String STREETS = "/streets";
-    public static final String RESTAURANTS_BY_STREET = "/restaurants/show/{street}";
-
     private final StreetService streetService;
-
     private final StreetMapper streetMapper;
-
 
     @GetMapping(STREETS)
     public String streets(Model model) {
@@ -38,16 +32,16 @@ public class StreetController {
         return "streets";
     }
 
-//    @GetMapping(CUSTOMER_BY_LOGIN)
-//    public String showCustomerDetails(@PathVariable String login, Model model) {
-//
-//        CustomerDTO customerDetails = customerService.findByLogin(login)
-//                .map(customerMapper::map)
-//                .orElseThrow(() -> new RuntimeException("Customer with login [%s] doest noc exists".formatted(login)));
-//
-//        model.addAttribute("customer", customerDetails);
-//
-//        return "customerDetails";
+
+
+//    @GetMapping(STREETS_BY_RESTAURANTS)
+//    public String showStreetsByRestaurant(@PathVariable String restaurantName, Model model) {
+//        var streetsSet = streetService.findStreetsByRestaurantName(restaurantName).stream()
+//                .map(streetMapper::map).collect(Collectors.toSet());
+//        model.addAttribute("streets", streetsSet);
+//        return "streetsByRestaurant";
 //    }
+
+
 }
 

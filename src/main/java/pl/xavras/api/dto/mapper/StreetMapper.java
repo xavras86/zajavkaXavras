@@ -8,4 +8,6 @@ import pl.xavras.domain.Street;
 public interface StreetMapper {
 
     StreetDTO map(Street street);
+
+
 }

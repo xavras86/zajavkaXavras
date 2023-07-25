@@ -6,9 +6,29 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
           integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
+<style type=text/css>
+        h2 {
+            background-color: DeepSkyBlue;
+            margin: 10px;
+        }
+        div {
+            color: white;
+            background-color: FloralWhite;
+            margin: 2px;
+            font-size: 25px;
+        }
+        body {
+            text-align: center;
+        }
+</style>
 <body>
     <div class="container">
         <h2>Customer</h2>
+        <a class="btn btn-success btn-lg" th:href="@{/streets}">Streets list</a>
+        <a class="btn btn-primary btn-lg" th:href="@{/restaurants}">Restaurants list</a>
+        <a class="btn btn-info btn-lg" th:href="@{/customers}">Customers list</a>
+        <a class="btn btn-warning btn-lg" th:href="@{/home}">Back to home</a>
+        <br>
         <table class="table table-striped table-hover">
             <tr>
                 <th>Login</th>
@@ -25,7 +45,7 @@
                 <td th:text="${customer.email}"></td>
             </tr>
         </table>
-        <a class="btn btn-light" th:href="@{/customers}">Show all customers</a>
+
     </div>
 </body>
 </html>

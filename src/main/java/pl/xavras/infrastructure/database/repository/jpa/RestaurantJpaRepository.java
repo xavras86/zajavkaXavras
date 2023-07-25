@@ -14,6 +14,9 @@ public interface RestaurantJpaRepository extends JpaRepository<RestaurantEntity,
 
     List<RestaurantEntity> findAll();
 
+
+
+
 //    @Query("""
 //            SELECT restaurant.restaurant_id, restaurant.name, restaurant.phone, restaurant.email FROM restaurant_street AS rsc
 //            	JOIN street ON street.street_id = rsc.street_id
