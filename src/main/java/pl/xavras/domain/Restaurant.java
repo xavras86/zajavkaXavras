@@ -19,6 +19,7 @@ public class Restaurant {
     Address address;
     Owner owner;
     Set<RestaurantStreet> restaurantStreets;
+    Set<MenuItem> menuItems;
 
 
 }

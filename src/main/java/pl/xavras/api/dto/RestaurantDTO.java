@@ -6,6 +6,8 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import pl.xavras.domain.Address;
 
+import java.util.Set;
+
 
 @Data
 @Builder
@@ -19,4 +21,5 @@ public class RestaurantDTO {
     private String email;
     private OwnerDTO owner;
     private AddressDTO address;
+    private Set<MenuItemDTO> menuItems;
 }

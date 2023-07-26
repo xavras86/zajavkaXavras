@@ -17,18 +17,18 @@ public class MenuItemOrderEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "menuItem_orders_id")
+    @Column(name = "menu_item_orders_id")
     private Integer menuItemOrdersId;
 
     @Column(name = "quantity")
     private Integer quantity;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "menuItem_id")
+    @JoinColumn(name = "menu_item_id")
     private MenuItemEntity menuItem;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "order_id")
+    @JoinColumn(name = "orders_id")
     private OrderEntity order;
 
 

@@ -6,10 +6,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
-import pl.xavras.api.dto.AddressDTO;
-import pl.xavras.api.dto.CustomerDTO;
-import pl.xavras.api.dto.OwnerDTO;
-import pl.xavras.api.dto.RestaurantDTO;
+import pl.xavras.api.dto.*;
 import pl.xavras.api.dto.mapper.RestaurantMapper;
 import pl.xavras.api.dto.mapper.StreetMapper;
 import pl.xavras.business.RestaurantService;
@@ -17,6 +14,7 @@ import pl.xavras.business.StreetService;
 import pl.xavras.domain.Address;
 
 import java.util.List;
+import java.util.Set;
 import java.util.stream.Collectors;
 
 
@@ -28,6 +26,7 @@ public class RestaurantController {
     public static final String RESTAURANT = "/restaurants";
     public static final String RESTAURANTS_BY_STREET = "/restaurants/street/{streetName}";
     private static final String RESTAURANT_BY_NAME = "/restaurants/show/{restaurantName}";
+
     private final RestaurantService restaurantService;
     private final RestaurantMapper restaurantMapper;
 
@@ -56,11 +55,13 @@ public class RestaurantController {
                 .orElseThrow(() -> new RuntimeException("Restaurant with name [%s] doest not exists".formatted(restaurantName)));
         AddressDTO address = restaurantDetails.getAddress();
         OwnerDTO owner = restaurantDetails.getOwner();
+        Set<MenuItemDTO> menuItems = restaurantDetails.getMenuItems();
 
 
         model.addAttribute("restaurant", restaurantDetails);
         model.addAttribute("address", address);
         model.addAttribute("owner", owner);
+        model.addAttribute("menuItems", menuItems);
 
         return "restaurantDetails";
     }

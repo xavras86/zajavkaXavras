@@ -23,12 +23,13 @@
 </style>
 <body>
     <div class="container">
-        <h2>RESTAURANT DETAILS:</h2>
+        <br>
         <a class="btn btn-success btn-lg" th:href="@{/streets}">Streets list</a>
         <a class="btn btn-primary btn-lg" th:href="@{/restaurants}">Restaurants list</a>
         <a class="btn btn-info btn-lg" th:href="@{/customers}">Customers list</a>
         <a class="btn btn-warning btn-lg" th:href="@{/home}">Back to home</a>
         <br>
+        <h2>RESTAURANT DETAILS:</h2>
         <table class="table table-striped table-hover">
             <tr>
                 <th>Name</th>
@@ -56,7 +57,30 @@
                 </td>
             </tr>
         </table>
-        <a class="btn btn-warning btn-lg" th:href="@{/home}">Zobacz menu!</a>
+        <br>
+        <h2>OUR MENU:</h2>
+
+        <table class="table table-striped table-hover">
+            <tr>
+                <th>Meal name</th>
+                <th>Price</th>
+                <th>Category</th>
+                <th>description</th>
+                <th></th>
+                <th></th>
+            </tr>
+            <tr th:each="menuItem : ${menuItems}">
+                <td th:text="${menuItem.name}"></td>
+                <td th:text="${menuItem.description}"></td>
+                <td th:text="${menuItem.category}"></td>
+                <td th:text="${menuItem.price}"></td>
+                <td>
+                    <form action="#" th:action="@{{name}(name=${restaurant.name})}" method="GET">
+                        <button type="submit" class="btn btn-info">Order!</button>
+                    </form>
+                </td>
+            </tr>
+        </table>
 
     </div>
 </body>

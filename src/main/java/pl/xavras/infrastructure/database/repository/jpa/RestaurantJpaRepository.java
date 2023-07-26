@@ -12,7 +12,7 @@ import java.util.Optional;
 public interface RestaurantJpaRepository extends JpaRepository<RestaurantEntity, Integer> {
     Optional<RestaurantEntity> findByName(String name);
 
-    List<RestaurantEntity> findAll();
+
 
 
 

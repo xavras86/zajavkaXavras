@@ -4,9 +4,8 @@ import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-
-import pl.xavras.api.dto.mapper.RestaurantMapper;
 import pl.xavras.business.dao.RestaurantDAO;
+import pl.xavras.domain.MenuItem;
 import pl.xavras.domain.Restaurant;
 
 import java.util.List;
@@ -26,13 +25,12 @@ public class RestaurantService {
     }
 
     @Transactional
-    public Set<Restaurant> findRestaurantsByStreetName(String streetName){
+    public Set<Restaurant> findRestaurantsByStreetName(String streetName) {
         return restaurantDAO.findRestaurantsByStreetName(streetName);
     }
 
     @Transactional
     public Optional<Restaurant> findByName(String restaurantName) {
         return restaurantDAO.findByName(restaurantName);
-
     }
 }

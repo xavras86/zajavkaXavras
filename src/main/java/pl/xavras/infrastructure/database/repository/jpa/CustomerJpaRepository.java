@@ -7,7 +7,6 @@ import java.util.List;
 
 public interface CustomerJpaRepository extends JpaRepository<CustomerEntity, Integer> {
 
-    List<CustomerEntity> findAll();
 
 
 }
