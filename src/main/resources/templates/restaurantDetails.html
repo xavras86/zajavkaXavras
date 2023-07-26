@@ -1,0 +1,63 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>RESTAURANT DETAILS:</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+<style type=text/css>
+        h2 {
+            background-color: DeepSkyBlue;
+            margin: 10px;
+        }
+        div {
+            color: white;
+            background-color: FloralWhite;
+            margin: 2px;
+            font-size: 25px;
+        }
+        body {
+            text-align: center;
+        }
+</style>
+<body>
+    <div class="container">
+        <h2>RESTAURANT DETAILS:</h2>
+        <a class="btn btn-success btn-lg" th:href="@{/streets}">Streets list</a>
+        <a class="btn btn-primary btn-lg" th:href="@{/restaurants}">Restaurants list</a>
+        <a class="btn btn-info btn-lg" th:href="@{/customers}">Customers list</a>
+        <a class="btn btn-warning btn-lg" th:href="@{/home}">Back to home</a>
+        <br>
+        <table class="table table-striped table-hover">
+            <tr>
+                <th>Name</th>
+                <th>Phone</th>
+                <th>Email</th>
+                <th>City</th>
+                <th>Street</th>
+                <th>Number</th>
+                <th>Owner Name</th>
+                <th>Owner Surname</th>
+            </tr>
+            <tr>
+                <td th:text="${restaurant.name}"></td>
+                <td th:text="${restaurant.phone}"></td>
+                <td th:text="${restaurant.email}"></td>
+                <td th:text="${address.city}"></td>
+                <td th:text="${address.street}"></td>
+                <td th:text="${address.buildingNumber}"></td>
+                <td th:text="${owner.name}"></td>
+                <td th:text="${owner.surname}"></td>
+                <td>
+                    <form action="#" th:action="@{{name}(name=${restaurant.name})}" method="GET">
+                        <button type="submit" class="btn btn-info">Show</button>
+                    </form>
+                </td>
+            </tr>
+        </table>
+        <a class="btn btn-warning btn-lg" th:href="@{/home}">Zobacz menu!</a>
+
+    </div>
+</body>
+</html>

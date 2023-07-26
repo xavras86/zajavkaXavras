@@ -1,4 +1,4 @@
-create TABLE menuItem
+create TABLE menu_item
 (
     menuItem_id         SERIAL          NOT NULL,
     name                VARCHAR(32)     NOT NULL,

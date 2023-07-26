@@ -14,13 +14,13 @@ import java.util.Set;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@Table(name = "menuItem")
+@Table(name = "menu_item")
 public class MenuItemEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "menuItem_id")
-    private Integer menuItem;
+    private Integer menuItemId;
 
     @Column(name = "name")
     private String name;

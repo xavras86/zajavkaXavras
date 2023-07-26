@@ -12,4 +12,7 @@ public interface CustomerDAO {
     List<Customer> findAll();
 
 
+    Customer saveCustomer(Customer customer);
+
+
 }

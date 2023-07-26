@@ -8,4 +8,6 @@ import pl.xavras.domain.Customer;
 public interface CustomerMapper {
 
     CustomerDTO map(Customer customer);
+
+    Customer map(CustomerDTO customerDTO);
 }

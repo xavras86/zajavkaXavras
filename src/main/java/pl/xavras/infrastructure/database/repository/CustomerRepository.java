@@ -4,6 +4,7 @@ import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Repository;
 import pl.xavras.business.dao.CustomerDAO;
 import pl.xavras.domain.Customer;
+import pl.xavras.infrastructure.database.entity.CustomerEntity;
 import pl.xavras.infrastructure.database.repository.jpa.CustomerJpaRepository;
 import pl.xavras.infrastructure.database.repository.mapper.CustomerEntityMapper;
 
@@ -27,8 +28,16 @@ public class CustomerRepository implements CustomerDAO {
 
     }
 
+    @Override
     public List<Customer> findAll(){
         return customerJpaRepository.findAll().stream()
                 .map(customerEntityMapper::mapFromEntity).toList();
+    }
+
+    @Override
+    public Customer saveCustomer(Customer customer) {
+        CustomerEntity toSave = customerEntityMapper.mapToEntity(customer);
+        CustomerEntity saved = customerJpaRepository.save(toSave);
+        return customerEntityMapper.mapFromEntity(saved);
     }
 }

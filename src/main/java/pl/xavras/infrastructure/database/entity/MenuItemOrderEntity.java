@@ -12,7 +12,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@Table(name = "menuItem_orders")
+@Table(name = "menu_item_orders")
 public class MenuItemOrderEntity {
 
     @Id

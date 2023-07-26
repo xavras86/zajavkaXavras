@@ -31,4 +31,8 @@ public class CustomerService {
         }
         return byLogin;
     }
+    @Transactional
+    public Customer saveCustomer(Customer customer){
+        return customerDAO.saveCustomer(customer);
+    }
 }

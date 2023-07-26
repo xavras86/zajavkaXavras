@@ -12,8 +12,13 @@
             background-color: DeepSkyBlue;
             margin: 10px;
         }
+        h3 {
+
+            background-color: Chartreusee;
+            margin: 10px;
+        }
         div {
-            color: white;
+            color: black;
             background-color: FloralWhite;
             margin: 2px;
             font-size: 25px;
@@ -21,6 +26,7 @@
         body {
             text-align: center;
         }
+
 </style>
 
 <body>
@@ -57,10 +63,25 @@
                 </td>
             </tr>
         </table>
-        <a class="btn btn-success btn-sm" th:href="@{/streets}">Streets list</a>
-        <a class="btn btn-primary btn-sm" th:href="@{/restaurants}">Restaurants list</a>
-        <a class="btn btn-info btn-sm" th:href="@{/customers}">Customers list</a>
     </div>
 </div>
+<div class="container">
+    <div class="page-header" id="banner2">
+        <h3>Add new customer</h3>
+        <form action="#" th:action="@{/customers/add}" th:method="POST" th:object="${customerDTO}">
+            <div class="form-group">
+                Name: <input type="text" th:field="*{name}"/><br>
+                Surname: <input type="text" th:field="*{surname}"/><br>
+                Phone: <input type="text" th:field="*{phone}"/><br>
+                Email: <input type="text" th:field="*{email}"/><br>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create customer" name="button"/>
+            </div>
+        </form>
+        <hr/>
+    </div>
+</div>
+
 </body>
 </html>

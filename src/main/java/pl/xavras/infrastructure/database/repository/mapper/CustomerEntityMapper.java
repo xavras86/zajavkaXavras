@@ -17,7 +17,14 @@ public interface CustomerEntityMapper {
                 .phone(entity.getPhone())
                 .email(entity.getEmail())
                 .build();
+    }
 
-
+    default CustomerEntity mapToEntity(Customer customer) {
+        return CustomerEntity.builder()
+                .name(customer.getName())
+                .surname(customer.getSurname())
+                .phone(customer.getPhone())
+                .email(customer.getEmail())
+                .build();
     }
 }
