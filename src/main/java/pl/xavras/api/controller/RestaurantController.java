@@ -7,11 +7,13 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import pl.xavras.api.dto.*;
+import pl.xavras.api.dto.mapper.MenuItemMapper;
 import pl.xavras.api.dto.mapper.RestaurantMapper;
 import pl.xavras.api.dto.mapper.StreetMapper;
 import pl.xavras.business.RestaurantService;
 import pl.xavras.business.StreetService;
 import pl.xavras.domain.Address;
+import pl.xavras.domain.MenuItem;
 
 import java.util.List;
 import java.util.Set;
@@ -29,6 +31,10 @@ public class RestaurantController {
 
     private final RestaurantService restaurantService;
     private final RestaurantMapper restaurantMapper;
+    private final MenuItemMapper menuItemMapper;
+
+
+
 
     @GetMapping(RESTAURANT)
     public String restaurants(Model model) {
@@ -50,12 +56,18 @@ public class RestaurantController {
     @GetMapping(RESTAURANT_BY_NAME)
     public String showRestaurantDetails(@PathVariable String restaurantName, Model model) {
 
-        RestaurantDTO restaurantDetails = restaurantService.findByName(restaurantName)
+        var restaurantDetails = restaurantService.findByName(restaurantName)
                 .map(restaurantMapper::map)
                 .orElseThrow(() -> new RuntimeException("Restaurant with name [%s] doest not exists".formatted(restaurantName)));
         AddressDTO address = restaurantDetails.getAddress();
         OwnerDTO owner = restaurantDetails.getOwner();
-        Set<MenuItemDTO> menuItems = restaurantDetails.getMenuItems();
+
+        var menuItems = restaurantService.findByName(restaurantName).map(a -> a.getMenuItems())
+                .map(menuItemMapper::map)
+                .orElseThrow(() -> new RuntimeException("Restaurant with name [%s] doest not exists".formatted(restaurantName)));
+
+//        Set<MenuItemDTO> menuItems = restaurantDetails.getMenuItems();
+
 
 
         model.addAttribute("restaurant", restaurantDetails);

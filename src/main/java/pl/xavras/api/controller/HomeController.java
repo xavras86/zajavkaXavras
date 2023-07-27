@@ -16,7 +16,7 @@ import java.util.List;
 @AllArgsConstructor
 public class HomeController {
 
-    public static final String HOME = "/home";
+    public static final String HOME = "/";
 
     @GetMapping(HOME)
     public String home() {

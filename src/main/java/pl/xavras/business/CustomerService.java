@@ -17,22 +17,20 @@ public class CustomerService {
 
     private final CustomerDAO customerDAO;
 
-    @Transactional
     public List<Customer> findAll() {
 
         return customerDAO.findAll();
     }
 
-    @Transactional
     public Optional<Customer> findByLogin(String login) {
         Optional<Customer> byLogin = customerDAO.findByLogin(login);
         if (byLogin.isEmpty()) {
-            throw new RuntimeException("Customer with login [%s] doest noc exists".formatted(login));
+            throw new RuntimeException("Customer with login [%s] doest not exists".formatted(login));
         }
         return byLogin;
     }
     @Transactional
-    public Customer saveCustomer(Customer customer){
-        return customerDAO.saveCustomer(customer);
+    public void saveCustomer(Customer customer){
+        customerDAO.saveCustomer(customer);
     }
 }

@@ -19,17 +19,14 @@ public class RestaurantService {
 
     private final RestaurantDAO restaurantDAO;
 
-    @Transactional
     public List<Restaurant> findAll() {
         return restaurantDAO.findAll();
     }
 
-    @Transactional
     public Set<Restaurant> findRestaurantsByStreetName(String streetName) {
         return restaurantDAO.findRestaurantsByStreetName(streetName);
     }
 
-    @Transactional
     public Optional<Restaurant> findByName(String restaurantName) {
         return restaurantDAO.findByName(restaurantName);
     }

@@ -14,10 +14,10 @@ import java.math.BigDecimal;
 @AllArgsConstructor
 public class MenuItemDTO {
 
-    String name;
-    BigDecimal price;
-    String category;
-    String description;
-    Restaurant restaurant;
+   private String name;
+   private BigDecimal price;
+   private String category;
+   private String description;
+   private Restaurant restaurant;
 
 }

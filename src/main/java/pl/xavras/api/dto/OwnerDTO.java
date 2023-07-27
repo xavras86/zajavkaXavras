@@ -11,6 +11,6 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 public class OwnerDTO {
 
-    String name;
-    String surname;
+   private String name;
+   private String surname;
 }

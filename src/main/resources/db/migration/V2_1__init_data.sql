@@ -9,16 +9,16 @@ insert into OWNER (owner_id, name, surname, phone, email) values (8, 'Welch', 'L
 insert into OWNER (owner_id, name, surname, phone, email) values (9, 'Joceline', 'Bonifacio', '786 873 7012', 'jbonifacio8@amazon.com');
 insert into OWNER (owner_id, name, surname, phone, email) values (10, 'Cora', 'Hayller', '773 592 1375', 'chayller9@google.ca');
 
-insert into CUSTOMER ( name, surname, phone, email) values ('Harwell', 'Braghini', '417 595 1397', 'hbraghini0@eventbrite.com');
-insert into CUSTOMER (name, surname, phone, email) values ('Corine', 'Dunsire', '957 408 5246', 'cdunsire1@virginia.edu');
-insert into CUSTOMER (name, surname, phone, email) values ('Inga', 'McGown', '282 736 5542', 'imcgown2@vimeo.com');
-insert into CUSTOMER (name, surname, phone, email) values ('Lolita', 'Sallter', '292 499 9098', 'lsallter3@mac.com');
-insert into CUSTOMER (name, surname, phone, email) values ('Austin', 'Dowsey', '676 297 2107', 'adowsey4@rakuten.co.jp');
-insert into CUSTOMER (name, surname, phone, email) values ('Georgeanne', 'Raoux', '929 895 7582', 'graoux5@qq.com');
-insert into CUSTOMER (name, surname, phone, email) values ('Ber', 'Rosa', '807 197 0433', 'brosa6@github.com');
-insert into CUSTOMER (name, surname, phone, email) values ('Carmine', 'Nevett', '158 335 3552', 'cnevett7@friendfeed.com');
-insert into CUSTOMER (name, surname, phone, email) values ('Candis', 'Begg', '863 203 3419', 'cbegg8@google.cn');
-insert into CUSTOMER (name, surname, phone, email) values ('Berny', 'Edworthye', '720 392 5699', 'bedworthye9@hud.gov');
+insert into CUSTOMER (customer_id, name, surname, phone, email) values (1,'Harwell', 'Braghini', '417 595 1397', 'hbraghini0@eventbrite.com');
+insert into CUSTOMER (customer_id,name, surname, phone, email) values (2,'Corine', 'Dunsire', '957 408 5246', 'cdunsire1@virginia.edu');
+insert into CUSTOMER (customer_id,name, surname, phone, email) values (3,'Inga', 'McGown', '282 736 5542', 'imcgown2@vimeo.com');
+insert into CUSTOMER (customer_id,name, surname, phone, email) values (4,'Lolita', 'Sallter', '292 499 9098', 'lsallter3@mac.com');
+insert into CUSTOMER (customer_id,name, surname, phone, email) values (5,'Austin', 'Dowsey', '676 297 2107', 'adowsey4@rakuten.co.jp');
+insert into CUSTOMER (customer_id,name, surname, phone, email) values (6,'Georgeanne', 'Raoux', '929 895 7582', 'graoux5@qq.com');
+insert into CUSTOMER (customer_id,name, surname, phone, email) values (7,'Ber', 'Rosa', '807 197 0433', 'brosa6@github.com');
+insert into CUSTOMER (customer_id,name, surname, phone, email) values (8,'Carmine', 'Nevett', '158 335 3552', 'cnevett7@friendfeed.com');
+insert into CUSTOMER (customer_id,name, surname, phone, email) values (9,'Candis', 'Begg', '863 203 3419', 'cbegg8@google.cn');
+insert into CUSTOMER (customer_id,name, surname, phone, email) values (10,'Berny', 'Edworthye', '720 392 5699', 'bedworthye9@hud.gov');
 
 
 insert into street (street_id, city, street) values (1, 'Poznań', 'al. 15 Pułku Ułanów Poznańskich');
@@ -2742,6 +2742,17 @@ insert into menu_item (name, price, category, description, restaurant_id) values
 insert into menu_item (name, price, category, description, restaurant_id) values ('Ryba2', '15.00', 'Obiad', 'proin at turpis a pede posuere nonummy integer non velit donec diam neque vestibulum eget vulputate', 3);
 insert into menu_item (name, price, category, description, restaurant_id) values ('Zapiekanka', '35.03', 'Przekąski', 'tortor duis mattis egestas metus aenean fermentum donec ut mauris eget massa tempor convallis nulla neque', 1);
 insert into menu_item (name, price, category, description, restaurant_id) values ('Ser', '11.23', 'Przekąski', 'mauris sit amet eros suspendisse accumsan tortor quis turpis sed ante vivamus tortor duis mattis egestas metus', 1);
+
+insert into orders (orders_id, orders_number, received_date_time, completed_date_time, is_cancelled, is_completed, total_value, customer_id, address_id) values (1, '01H6BQ28RAEC5JCF0X8GYNFD92', '2025-10-01 14:00:00+02', '2025-10-01 14:00:00+02', true, false, '33.44', 1, 1);
+insert into orders (orders_id, orders_number, received_date_time, completed_date_time, is_cancelled, is_completed, total_value, customer_id, address_id) values (2, '01H6BQ28RBABK0VBNHP60EG35Z', '2025-10-01 14:00:00+02', '2025-10-01 14:00:00+02', true, false, '33.44', 5, 1);
+insert into orders (orders_id, orders_number, received_date_time, completed_date_time, is_cancelled, is_completed, total_value, customer_id, address_id) values (3, '01H6BQ28RD1PQWY9CN6FK9NQV8', '2025-10-01 14:00:00+02', '2025-10-01 14:00:00+02', false, false, '33.44', 2, 1);
+insert into orders (orders_id, orders_number, received_date_time, completed_date_time, is_cancelled, is_completed, total_value, customer_id, address_id) values (4, '01H6BQ28RE29H6CPM1ZKBS2QAY', '2025-10-01 14:00:00+02', '2025-10-01 14:00:00+02', false, false, '33.44', 2, 1);
+insert into orders (orders_id, orders_number, received_date_time, completed_date_time, is_cancelled, is_completed, total_value, customer_id, address_id) values (5, '01H6BQ28RF1BWFP88ZHD9JMCBX', '2025-10-01 14:00:00+02', '2025-10-01 14:00:00+02', true, false, '33.44', 3, 5);
+insert into orders (orders_id, orders_number, received_date_time, completed_date_time, is_cancelled, is_completed, total_value, customer_id, address_id) values (6, '01H6BQ28RH57KQQP3GP1D6FNRN', '2025-10-01 14:00:00+02', '2025-10-01 14:00:00+02', false, true, '33.44', 2, 4);
+insert into orders (orders_id, orders_number, received_date_time, completed_date_time, is_cancelled, is_completed, total_value, customer_id, address_id) values (7, '01H6BQ28RJ86NP4PP3YH892P7X', '2025-10-01 14:00:00+02', '2025-10-01 14:00:00+02', true, false, '33.44', 5, 5);
+insert into orders (orders_id, orders_number, received_date_time, completed_date_time, is_cancelled, is_completed, total_value, customer_id, address_id) values (8, '01H6BQ28RKMNJ4ZX7QJAZ8PKPS', '2025-10-01 14:00:00+02', '2025-10-01 14:00:00+02', false, false, '33.44', 5, 5);
+insert into orders (orders_id, orders_number, received_date_time, completed_date_time, is_cancelled, is_completed, total_value, customer_id, address_id) values (9, '01H6BQ28RK3QRV0EYN43KWRNP4', '2025-10-01 14:00:00+02', '2025-10-01 14:00:00+02', true, true, '33.44', 4, 1);
+insert into orders (orders_id, orders_number, received_date_time, completed_date_time, is_cancelled, is_completed, total_value, customer_id, address_id) values (10, '01H6BQ28RM4GFB5VBK60SAG9FX', '2025-10-01 14:00:00+02', '2025-10-01 14:00:00+02', false, false, '33.44', 1, 3);
 
 
 

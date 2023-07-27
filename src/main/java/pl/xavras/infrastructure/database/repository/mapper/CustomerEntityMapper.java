@@ -19,12 +19,13 @@ public interface CustomerEntityMapper {
                 .build();
     }
 
-    default CustomerEntity mapToEntity(Customer customer) {
-        return CustomerEntity.builder()
-                .name(customer.getName())
-                .surname(customer.getSurname())
-                .phone(customer.getPhone())
-                .email(customer.getEmail())
-                .build();
-    }
+    CustomerEntity mapToEntity(Customer customer);
+//    default CustomerEntity mapToEntity(Customer customer) {
+//        return CustomerEntity.builder()
+//                .name(customer.getName())
+//                .surname(customer.getSurname())
+//                .phone(customer.getPhone())
+//                .email(customer.getEmail())
+//                .build();
+//    }
 }

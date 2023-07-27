@@ -21,5 +21,5 @@ public class RestaurantDTO {
     private String email;
     private OwnerDTO owner;
     private AddressDTO address;
-    private Set<MenuItemDTO> menuItems;
+//    private Set<MenuItemDTO> menuItems;
 }

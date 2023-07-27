@@ -15,13 +15,14 @@ import java.util.stream.Collectors;
 @Mapper(componentModel = "spring")
 public interface RestaurantMapper {
 
-    @Mapping(source = "menuItems", target = "menuItems", qualifiedByName = "mapMenuItems")
+//    @Mapping(source = "menuItems", target = "menuItems", qualifiedByName = "mapMenuItems")
+
     RestaurantDTO map(Restaurant restaurant);
 
-    @Named("mapMenuItems")
-    default Set<MenuItemDTO> mapMenuItems(Set<MenuItem> menuItems) {
-        return menuItems.stream().map(this::map).collect(Collectors.toSet());
-    }
+//    @Named("mapMenuItems")
+//    default Set<MenuItemDTO> mapMenuItems(Set<MenuItem> menuItems) {
+//        return menuItems.stream().map(this::map).collect(Collectors.toSet());
+//    }
 
-    MenuItemDTO map (MenuItem entity);
+//    MenuItemDTO map (MenuItem entity);
 }
