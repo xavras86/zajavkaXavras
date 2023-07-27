@@ -1,6 +1,7 @@
 package pl.xavras.infrastructure.database.repository.mapper;
 
 import org.mapstruct.Mapper;
+import org.mapstruct.Mapping;
 import org.mapstruct.ReportingPolicy;
 import pl.xavras.domain.Address;
 import pl.xavras.domain.Order;
@@ -12,5 +13,4 @@ public interface OrderEntityMapper {
 
 
      Order mapFromEntity(OrderEntity entity);
-
 }

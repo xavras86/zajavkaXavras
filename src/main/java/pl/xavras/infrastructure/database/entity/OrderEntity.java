@@ -1,16 +1,16 @@
 package pl.xavras.infrastructure.database.entity;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import java.math.BigDecimal;
 import java.time.OffsetDateTime;
 import java.util.Set;
 
-@Data
+@Getter
+@Setter
+@EqualsAndHashCode(of = "orderNumber")
+@ToString(of = {"orderId", "orderNumber", "receivedDateTime", "completedDateTime", "totalValue"})
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
@@ -23,8 +23,8 @@ public class OrderEntity {
     @Column(name = "orders_id")
     private Integer orderId;
 
-    @Column(name = "orders_number")
-    private String order_number;
+    @Column(name = "orders_number", unique = true) //todo dodać walidację
+    private String orderNumber;
 
     @Column(name = "received_date_time")
     private OffsetDateTime receivedDateTime;

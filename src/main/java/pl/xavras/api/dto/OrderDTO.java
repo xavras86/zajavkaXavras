@@ -16,12 +16,12 @@ import java.time.OffsetDateTime;
 @AllArgsConstructor
 public class OrderDTO {
 
-    private String order_number;
+    private String orderNumber;
     private OffsetDateTime receivedDateTime;
-    private AddressEntity address;
     private OffsetDateTime completedDateTime;
     private Boolean isCancelled;
     private Boolean isCompleted;
     private BigDecimal totalValue;
     private CustomerEntity customer;
+    private AddressEntity address;
 }

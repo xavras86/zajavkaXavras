@@ -1,4 +1,4 @@
-package pl.xavras.business.dao;
+package pl.xavras.infrastructure.database.entity.dao;
 
 import pl.xavras.domain.Restaurant;
 

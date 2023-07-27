@@ -4,7 +4,7 @@ import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-import pl.xavras.business.dao.CustomerDAO;
+import pl.xavras.infrastructure.database.entity.dao.CustomerDAO;
 import pl.xavras.domain.Customer;
 
 import java.util.List;
@@ -29,6 +29,8 @@ public class CustomerService {
         }
         return byLogin;
     }
+
+
     @Transactional
     public void saveCustomer(Customer customer){
         customerDAO.saveCustomer(customer);

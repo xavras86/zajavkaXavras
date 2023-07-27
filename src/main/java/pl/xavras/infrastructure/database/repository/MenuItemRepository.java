@@ -2,18 +2,12 @@ package pl.xavras.infrastructure.database.repository;
 
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Repository;
-import pl.xavras.business.dao.CustomerDAO;
-import pl.xavras.business.dao.MenuItemDAO;
-import pl.xavras.domain.Customer;
+import pl.xavras.infrastructure.database.entity.dao.MenuItemDAO;
 import pl.xavras.domain.MenuItem;
-import pl.xavras.infrastructure.database.entity.CustomerEntity;
-import pl.xavras.infrastructure.database.repository.jpa.CustomerJpaRepository;
 import pl.xavras.infrastructure.database.repository.jpa.MenuItemJpaRepository;
-import pl.xavras.infrastructure.database.repository.mapper.CustomerEntityMapper;
 import pl.xavras.infrastructure.database.repository.mapper.MenuItemEntityMapper;
 
 import java.util.List;
-import java.util.Optional;
 
 @Repository
 @AllArgsConstructor

@@ -2,7 +2,7 @@ package pl.xavras.infrastructure.database.repository;
 
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Repository;
-import pl.xavras.business.dao.CustomerDAO;
+import pl.xavras.infrastructure.database.entity.dao.CustomerDAO;
 import pl.xavras.domain.Customer;
 import pl.xavras.infrastructure.database.entity.CustomerEntity;
 import pl.xavras.infrastructure.database.repository.jpa.CustomerJpaRepository;

@@ -2,7 +2,7 @@
 <html xmlns:th="http://www.thymeleaf.org">
 
 <head>
-    <title>Home page</title>
+    <title>Customers</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
           integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
@@ -28,16 +28,41 @@
 
 <div class="container">
     <div class="page-header" id="banner">
+
         <br>
         <a class="btn btn-success btn-lg" th:href="@{/streets}">Streets list</a>
         <a class="btn btn-primary btn-lg" th:href="@{/restaurants}">Restaurants list</a>
         <a class="btn btn-info btn-lg" th:href="@{/customers}">Customers list</a>
         <a class="btn btn-info btn-lg" th:href="@{/orders}">Orders list</a>
         <a class="btn btn-warning btn-lg" th:href="@{/}">Back to home</a>
-        <h2>HOME:</h2>
         <br>
-        <img th:src="@{/images/chewing.gif}" alt="OM NOM NOM" width="auto" height="300px"/
-    </div>
+        <h2>Orders: </h2>
+        <table class="table table-striped table-hover">
+            <tr>
+                <th>Order Number</th>
+                <th>Recieved:</th>
+                <th>Completed:</th>
+                <th>Total cost:</th>
+
+
+                <th></th>
+                <th></th>
+            </tr>
+            <tr th:each="order : ${orders}">
+                <td th:text="${order.orderNumber}"></td>
+                <td th:text="${order.receivedDateTime}"></td>
+                <td th:text="${order.completedDateTime}"></td>
+                <td th:text="${order.totalValue}"></td>
+                <td>
+<!--                    <form action="#" th:action="@{customer/show/{login}(login=${customer.login})}" method="GET">-->
+<!--                        <button type="submit" class="btn btn-info">Show</button>-->
+<!--                    </form>-->
+                </td>
+            </tr>
+        </table>
+
+
 </div>
+
 </body>
 </html>

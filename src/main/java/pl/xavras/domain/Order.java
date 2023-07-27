@@ -4,9 +4,6 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.Value;
 import lombok.With;
-import pl.xavras.infrastructure.database.entity.AddressEntity;
-import pl.xavras.infrastructure.database.entity.CustomerEntity;
-import pl.xavras.infrastructure.database.entity.MenuItemOrderEntity;
 
 import java.math.BigDecimal;
 import java.time.OffsetDateTime;
@@ -18,7 +15,7 @@ import java.util.Set;
 @Data
 public class Order {
 
-    String order_number;
+    String orderNumber;
 
     OffsetDateTime receivedDateTime;
 
@@ -30,9 +27,9 @@ public class Order {
 
     BigDecimal totalValue;
 
-    CustomerEntity customer;
+    Customer customer;
 
-    AddressEntity address;
+    Address address;
 
-    Set<MenuItemOrderEntity> menuItemOrders;
+    Set<MenuItemOrder> menuItemOrders;
 }
