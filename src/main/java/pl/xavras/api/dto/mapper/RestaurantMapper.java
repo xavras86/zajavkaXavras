@@ -1,16 +1,8 @@
 package pl.xavras.api.dto.mapper;
 
 import org.mapstruct.Mapper;
-import org.mapstruct.Mapping;
-import org.mapstruct.Named;
-import pl.xavras.api.dto.MenuItemDTO;
 import pl.xavras.api.dto.RestaurantDTO;
-import pl.xavras.domain.MenuItem;
 import pl.xavras.domain.Restaurant;
-import pl.xavras.infrastructure.database.entity.MenuItemEntity;
-
-import java.util.Set;
-import java.util.stream.Collectors;
 
 @Mapper(componentModel = "spring")
 public interface RestaurantMapper {

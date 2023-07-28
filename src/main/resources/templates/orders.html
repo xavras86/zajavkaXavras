@@ -14,7 +14,7 @@
         }
         div {
             color: white;
-            background-color: HoneyDew;
+            background-color: grey;
             margin: 2px;
             font-size: 25px;
         }
@@ -60,9 +60,33 @@
                 </td>
             </tr>
         </table>
+</div>
 
+    <h2>Add new order</h2>
+    <form action="#" th:action="@{/order/add}" th:method="POST" th:object="${orderDataDTO}">
+        <div class="form-group">
+            Customer name: <input type="text" th:field="*{name}"/><br>
+            Customer surname: <input type="text" th:field="*{surname}"/><br>
+            Customer phone: <input type="text" th:field="*{phone}"/><br>
+            Customer email: <input type="text" th:field="*{email}"/><br>
+            Customer login: <input type="text" th:field="*{login}"/><br>
+
+            Address country: <input type="text" th:field="*{country}"/><br>
+            Address city: <input type="text" th:field="*{city}"/><br>
+            Address street: <input type="text" th:field="*{street}"/><br>
+            Address build no.: <input type="text" th:field="*{buildingNumber}"/><br>
+
+
+        </div>
+
+        <div class="form-group">
+            <input type="submit" value="Place order" name="button"/>
+        </div>
+    </form>
+    <hr/>
 
 </div>
+
 
 </body>
 </html>

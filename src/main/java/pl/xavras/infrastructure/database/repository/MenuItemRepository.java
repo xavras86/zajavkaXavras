@@ -2,8 +2,8 @@ package pl.xavras.infrastructure.database.repository;
 
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Repository;
-import pl.xavras.infrastructure.database.entity.dao.MenuItemDAO;
 import pl.xavras.domain.MenuItem;
+import pl.xavras.infrastructure.database.entity.dao.MenuItemDAO;
 import pl.xavras.infrastructure.database.repository.jpa.MenuItemJpaRepository;
 import pl.xavras.infrastructure.database.repository.mapper.MenuItemEntityMapper;
 

@@ -11,6 +11,7 @@ import lombok.With;
 @Data
 public class Customer {
 
+    Integer customerId;
     String name;
     String surname;
     String login;

@@ -15,4 +15,5 @@ public interface CustomerDAO {
     Customer saveCustomer(Customer customer);
 
 
+    Optional<Customer> findByEmail(String email);
 }

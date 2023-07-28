@@ -7,4 +7,7 @@ drop table IF EXISTS restaurant_street CASCADE;
 drop table IF EXISTS menu_item CASCADE;
 drop table IF EXISTS orders CASCADE;
 drop table IF EXISTS menu_item_orders CASCADE;
+drop table IF EXISTS food_ordering_user CASCADE;
+drop table IF EXISTS food_ordering_role CASCADE;
+drop table IF EXISTS food_ordering_user_role CASCADE;
 drop table IF EXISTS flyway_schema_history CASCADE;

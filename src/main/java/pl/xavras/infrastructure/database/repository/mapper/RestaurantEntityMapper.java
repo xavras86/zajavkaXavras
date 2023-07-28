@@ -4,15 +4,12 @@ import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 import org.mapstruct.Named;
 import org.mapstruct.ReportingPolicy;
-import pl.xavras.api.dto.MenuItemDTO;
 import pl.xavras.domain.MenuItem;
 import pl.xavras.domain.Restaurant;
 import pl.xavras.domain.RestaurantStreet;
-import pl.xavras.domain.Street;
 import pl.xavras.infrastructure.database.entity.MenuItemEntity;
 import pl.xavras.infrastructure.database.entity.RestaurantEntity;
 import pl.xavras.infrastructure.database.entity.RestaurantStreetEntity;
-import pl.xavras.infrastructure.database.entity.StreetEntity;
 
 import java.util.Set;
 import java.util.stream.Collectors;

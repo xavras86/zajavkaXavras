@@ -1,8 +1,6 @@
 package pl.xavras.infrastructure.database.entity.dao;
 
-import org.springframework.data.repository.query.Param;
 import pl.xavras.domain.Order;
-import pl.xavras.infrastructure.database.entity.OrderEntity;
 
 import java.util.List;
 import java.util.Optional;
@@ -15,6 +13,10 @@ public interface OrderDAO {
     Set<Order> findOrdersByCustomerEmail(String customerEmail);
 
     Optional<Order> findByOrderNumber(String orderNumber);
+
+    Order saveOrder(Order order);
+
+
 
 
 }

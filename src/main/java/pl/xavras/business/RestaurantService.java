@@ -3,8 +3,8 @@ package pl.xavras.business;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
-import pl.xavras.infrastructure.database.entity.dao.RestaurantDAO;
 import pl.xavras.domain.Restaurant;
+import pl.xavras.infrastructure.database.entity.dao.RestaurantDAO;
 
 import java.util.List;
 import java.util.Optional;

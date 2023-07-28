@@ -2,8 +2,8 @@ package pl.xavras.infrastructure.database.repository;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Repository;
-import pl.xavras.infrastructure.database.entity.dao.RestaurantDAO;
 import pl.xavras.domain.Restaurant;
+import pl.xavras.infrastructure.database.entity.dao.RestaurantDAO;
 import pl.xavras.infrastructure.database.repository.jpa.RestaurantJpaRepository;
 import pl.xavras.infrastructure.database.repository.mapper.RestaurantEntityMapper;
 

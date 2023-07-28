@@ -1,6 +1,5 @@
 package pl.xavras.domain;
 
-import jakarta.persistence.*;
 import lombok.Builder;
 import lombok.Data;
 import lombok.Value;

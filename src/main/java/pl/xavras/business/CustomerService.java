@@ -4,8 +4,9 @@ import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-import pl.xavras.infrastructure.database.entity.dao.CustomerDAO;
 import pl.xavras.domain.Customer;
+import pl.xavras.domain.exception.NotFoundException;
+import pl.xavras.infrastructure.database.entity.dao.CustomerDAO;
 
 import java.util.List;
 import java.util.Optional;
@@ -28,6 +29,15 @@ public class CustomerService {
             throw new RuntimeException("Customer with login [%s] doest not exists".formatted(login));
         }
         return byLogin;
+    }
+
+
+    public Customer findByEmail(String email) {
+        Optional<Customer> customer = customerDAO.findByEmail(email);
+        if (customer.isEmpty()) {
+            throw new NotFoundException("Could not find customer by email: [%s]".formatted(email));
+        }
+        return customer.get();
     }
 
 

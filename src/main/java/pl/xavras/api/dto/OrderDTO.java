@@ -8,7 +8,6 @@ import pl.xavras.infrastructure.database.entity.AddressEntity;
 import pl.xavras.infrastructure.database.entity.CustomerEntity;
 
 import java.math.BigDecimal;
-import java.time.OffsetDateTime;
 
 @Data
 @Builder
@@ -17,8 +16,8 @@ import java.time.OffsetDateTime;
 public class OrderDTO {
 
     private String orderNumber;
-    private OffsetDateTime receivedDateTime;
-    private OffsetDateTime completedDateTime;
+    private String receivedDateTime;
+    private String completedDateTime;
     private Boolean isCancelled;
     private Boolean isCompleted;
     private BigDecimal totalValue;

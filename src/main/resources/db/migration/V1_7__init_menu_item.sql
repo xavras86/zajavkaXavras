@@ -1,6 +1,6 @@
 create TABLE menu_item
 (
-    menu_item_id         SERIAL          NOT NULL,
+    menu_item_id        SERIAL          NOT NULL,
     name                VARCHAR(32)     NOT NULL,
     price               NUMERIC(8, 2)   NOT NULL,
     category            VARCHAR(32)     NOT NULL,

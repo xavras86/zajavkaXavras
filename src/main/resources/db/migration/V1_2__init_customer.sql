@@ -7,5 +7,6 @@ create TABLE customer
     email       VARCHAR(32) NOT NULL,
     PRIMARY KEY (customer_id),
     UNIQUE (email)
+
 );
 

@@ -11,6 +11,7 @@ public interface CustomerEntityMapper {
 
     default Customer mapFromEntity(CustomerEntity entity) {
         return Customer.builder()
+                .customerId(entity.getCustomerId())
                 .name(entity.getName())
                 .surname(entity.getSurname())
                 .login(entity.getName() + "." + entity.getSurname())

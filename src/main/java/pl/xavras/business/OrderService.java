@@ -9,15 +9,11 @@ import pl.xavras.domain.MenuItemOrder;
 import pl.xavras.domain.Order;
 import pl.xavras.domain.exception.NotFoundException;
 import pl.xavras.infrastructure.database.entity.dao.OrderDAO;
-import pl.xavras.infrastructure.database.repository.mapper.AddressEntityMapper;
-import pl.xavras.infrastructure.database.repository.mapper.CustomerEntityMapper;
 
 import java.math.BigDecimal;
 import java.time.OffsetDateTime;
-import java.util.List;
-import java.util.Optional;
-import java.util.Random;
-import java.util.Set;
+import java.util.*;
+import java.util.stream.Collectors;
 
 @Service
 @AllArgsConstructor
@@ -26,8 +22,9 @@ public class OrderService {
 
     private final OrderDAO orderDAO;
 
-    private final CustomerEntityMapper customerEntityMapper;
-    private final AddressEntityMapper addressEntityMapper;
+
+    private final CustomerService customerService;
+    private final AddressService addressService;
 
     public List<Order> findAll() {
         return orderDAO.findAll();
@@ -46,6 +43,19 @@ public class OrderService {
         return byOrderNumber;
     }
 
+
+
+
+    public void placeOrder(Order order){
+        Customer customer = customerService.findByEmail(order.getCustomer().getEmail());
+        Address address = addressService.saveAddress(order.getAddress());
+        Set<MenuItemOrder> menuItemOrders = new HashSet<>(); //todo dodac liste pozycji
+        Order orderToPlace = buildOrder(customer, address, menuItemOrders);
+        orderDAO.saveOrder(orderToPlace);
+
+    }
+
+
     private Order buildOrder(Customer customer, Address address, Set<MenuItemOrder> menuItemOrders
             //todo powinno być zalezne od restauracji - zamowienie tylko z jednej restauracji, czy tzeba tutaj uwzglednic ?
     ) {
@@ -53,7 +63,7 @@ public class OrderService {
         return Order.builder()
                 .orderNumber(generateOrderNumber(whenCreated))
                 .receivedDateTime(whenCreated)
-                .completedDateTime(null)
+                .completedDateTime(whenCreated)
                 .totalValue(calculateTotalOrderValue(menuItemOrders))
                 .menuItemOrders(menuItemOrders)
                 .customer(customer)

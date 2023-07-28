@@ -6,17 +6,14 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
-import pl.xavras.api.dto.*;
+import pl.xavras.api.dto.AddressDTO;
+import pl.xavras.api.dto.OwnerDTO;
+import pl.xavras.api.dto.RestaurantDTO;
 import pl.xavras.api.dto.mapper.MenuItemMapper;
 import pl.xavras.api.dto.mapper.RestaurantMapper;
-import pl.xavras.api.dto.mapper.StreetMapper;
 import pl.xavras.business.RestaurantService;
-import pl.xavras.business.StreetService;
-import pl.xavras.domain.Address;
-import pl.xavras.domain.MenuItem;
 
 import java.util.List;
-import java.util.Set;
 import java.util.stream.Collectors;
 
 
@@ -65,10 +62,6 @@ public class RestaurantController {
         var menuItems = restaurantService.findByName(restaurantName).map(a -> a.getMenuItems())
                 .map(menuItemMapper::map)
                 .orElseThrow(() -> new RuntimeException("Restaurant with name [%s] doest not exists".formatted(restaurantName)));
-
-//        Set<MenuItemDTO> menuItems = restaurantDetails.getMenuItems();
-
-
 
         model.addAttribute("restaurant", restaurantDetails);
         model.addAttribute("address", address);

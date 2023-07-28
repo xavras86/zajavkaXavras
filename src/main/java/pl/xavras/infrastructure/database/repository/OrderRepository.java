@@ -3,9 +3,9 @@ package pl.xavras.infrastructure.database.repository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Repository;
+import pl.xavras.domain.Order;
 import pl.xavras.infrastructure.database.entity.OrderEntity;
 import pl.xavras.infrastructure.database.entity.dao.OrderDAO;
-import pl.xavras.domain.Order;
 import pl.xavras.infrastructure.database.repository.jpa.OrderJpaRepository;
 import pl.xavras.infrastructure.database.repository.mapper.OrderEntityMapper;
 
@@ -40,6 +40,13 @@ public class OrderRepository implements OrderDAO {
     public Optional<Order> findByOrderNumber(String orderNumber) {
         return orderJpaRepository.findByOrderNumber(orderNumber)
                 .map(orderEntityMapper::mapFromEntity);
+    }
+
+    @Override
+    public Order saveOrder(Order order) {
+        OrderEntity toSave = orderEntityMapper.mapToEntity(order);
+        OrderEntity saved = orderJpaRepository.save(toSave);
+        return orderEntityMapper.mapFromEntity(saved);
     }
 
 

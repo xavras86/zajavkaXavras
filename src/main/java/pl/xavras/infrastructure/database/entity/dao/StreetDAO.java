@@ -1,11 +1,9 @@
 package pl.xavras.infrastructure.database.entity.dao;
 
-import pl.xavras.domain.Restaurant;
 import pl.xavras.domain.Street;
 
 import java.util.List;
 import java.util.Optional;
-import java.util.Set;
 
 public interface StreetDAO {
    List<Street> findAll();

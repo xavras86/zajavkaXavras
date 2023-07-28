@@ -16,20 +16,12 @@ import java.util.Set;
 public class Order {
 
     String orderNumber;
-
     OffsetDateTime receivedDateTime;
-
     OffsetDateTime completedDateTime;
-
     Boolean isCancelled;
-
     Boolean isCompleted;
-
     BigDecimal totalValue;
-
     Customer customer;
-
     Address address;
-
     Set<MenuItemOrder> menuItemOrders;
 }
